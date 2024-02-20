@@ -1,5 +1,5 @@
-import { IsEmail, IsMongoId } from 'class-validator';
-import { ApiProperty } from '@nestjs/swagger';
+import { IsEmail, IsMongoId } from 'class-validator'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class GetClientDto {
   @ApiProperty({
@@ -7,13 +7,13 @@ export class GetClientDto {
     example: '6440d750376fd29eb0a33c41',
   })
   @IsMongoId()
-  id?: string;
+  id?: string
 
   @ApiProperty({
     required: true,
     example: 'Ha Noi',
   })
-  address?: string;
+  address?: string
 
   @ApiProperty({
     example: 'john.doe@example.com',
@@ -21,5 +21,5 @@ export class GetClientDto {
     format: 'email',
   })
   @IsEmail({}, { message: 'Invalid email address' })
-  email?: string;
+  email?: string
 }

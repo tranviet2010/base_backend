@@ -1,5 +1,5 @@
-import { IsDefined, IsEmail, IsString } from 'class-validator';
-import { ToLowerCase, Trim } from 'src/shares/decorators/transforms.decorator';
+import { IsDefined, IsEmail, IsString } from 'class-validator'
+import { ToLowerCase, Trim } from 'src/shares/decorators/transforms.decorator'
 
 export class ChangePasswordDto {
   @IsDefined()
@@ -7,15 +7,15 @@ export class ChangePasswordDto {
   @ToLowerCase()
   @IsEmail()
   @IsString()
-  email: string;
+  email: string
 
   @IsDefined()
   @IsString()
-  password: string;
+  password: string
 
   @IsDefined()
   @IsString()
-  newPassword: string;
+  newPassword: string
 }
 
-export default ChangePasswordDto;
+export default ChangePasswordDto

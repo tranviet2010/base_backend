@@ -1,45 +1,45 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
-export const CLIENT_POLICY_MODEL = 'client_policy';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+import { Document } from 'mongoose'
+export const CLIENT_POLICY_MODEL = 'client_policy'
 
 @Schema({ timestamps: true, collection: CLIENT_POLICY_MODEL })
 export class ClientPolicy {
   @Prop({ type: String })
-  name: string;
+  name: string
 
   @Prop({ required: false, type: String })
-  condition: string;
+  condition: string
 
   @Prop({ required: false, type: String })
-  upgrade_rewards: string;
+  upgrade_rewards: string
 
   @Prop({ required: false, type: String })
-  discount_policy: string;
+  discount_policy: string
 
   @Prop({ required: false, type: String })
-  birthday_policy: string;
+  birthday_policy: string
 
   @Prop({ required: false, type: String })
-  return_exchange_policy: string;
+  return_exchange_policy: string
 
   @Prop({ required: false, type: String })
-  warranty_policy: string;
+  warranty_policy: string
 
   @Prop({ required: false, type: String })
-  maintenance_requirement: string;
+  maintenance_requirement: string
 
   @Prop({ required: false, type: String })
-  member_day_promotion: string;
+  member_day_promotion: string
 
   @Prop({ required: false, type: String })
-  free_shipping_offer: string;
+  free_shipping_offer: string
 
   @Prop({ required: false, type: String })
-  extended_benefits: string;
+  extended_benefits: string
 
   @Prop({ required: false, type: String })
-  top_up_upgrade_rewards: string;
+  top_up_upgrade_rewards: string
 }
 
-export type ClientPolicyDocument = ClientPolicy & Document;
-export const ClientPolicySchema = SchemaFactory.createForClass(ClientPolicy);
+export type ClientPolicyDocument = ClientPolicy & Document
+export const ClientPolicySchema = SchemaFactory.createForClass(ClientPolicy)

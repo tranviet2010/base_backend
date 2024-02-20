@@ -1,6 +1,6 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { IsDefined, IsEmail } from 'class-validator';
-import { Trim, ToLowerCase } from 'src/shares/decorators/transforms.decorator';
+import { ApiProperty } from '@nestjs/swagger'
+import { IsDefined, IsEmail } from 'class-validator'
+import { Trim, ToLowerCase } from 'src/shares/decorators/transforms.decorator'
 
 export class ForgotPasswordDto {
   @ApiProperty({
@@ -11,10 +11,10 @@ export class ForgotPasswordDto {
   @Trim()
   @ToLowerCase()
   @IsEmail()
-  email: string;
+  email: string
 }
 
 export interface CacheForgotPassword {
-  code: string;
-  attempt: number;
+  code: string
+  attempt: number
 }

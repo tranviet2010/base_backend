@@ -14,7 +14,7 @@ import { UserRtStrategy } from './strategies/user-rt.strategy';
 
 @Module({
   imports: [
-    ClientModule,
+    // ClientModule,
     UsersModule,
     JwtModule.register({}),
     CacheModule.register({
@@ -28,7 +28,7 @@ import { UserRtStrategy } from './strategies/user-rt.strategy';
     }),
   ],
   controllers: [AuthController],
-  providers: [AuthService, ClientAtStrategy, ClientRtStrategy, UserAtStrategy, UserRtStrategy],
+  providers: [AuthService, ClientRtStrategy, UserAtStrategy, UserRtStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}

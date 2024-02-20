@@ -1,5 +1,5 @@
-import { IsNotEmpty } from 'class-validator';
-import { ApiProperty } from '@nestjs/swagger';
+import { IsNotEmpty } from 'class-validator'
+import { ApiProperty } from '@nestjs/swagger'
 
 export class SignUpByCodeDto {
   @ApiProperty({
@@ -7,12 +7,12 @@ export class SignUpByCodeDto {
     example: 'john.doe@example.com',
   })
   @IsNotEmpty()
-  readonly email: string;
+  readonly email: string
 
   @ApiProperty({
     required: true,
     example: '123456',
   })
   @IsNotEmpty()
-  readonly code: string;
+  readonly code: string
 }

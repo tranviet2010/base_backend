@@ -1,6 +1,6 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { IsDefined, IsEmail, IsNumberString, IsString } from 'class-validator';
-import { ToLowerCase, Trim } from 'src/shares/decorators/transforms.decorator';
+import { ApiProperty } from '@nestjs/swagger'
+import { IsDefined, IsEmail, IsNumberString, IsString } from 'class-validator'
+import { ToLowerCase, Trim } from 'src/shares/decorators/transforms.decorator'
 
 export class ChangePasswordByCodeDto {
   @ApiProperty({
@@ -12,7 +12,7 @@ export class ChangePasswordByCodeDto {
   @ToLowerCase()
   @IsEmail()
   @IsString()
-  email: string;
+  email: string
 
   @ApiProperty({
     required: true,
@@ -20,7 +20,7 @@ export class ChangePasswordByCodeDto {
   })
   @IsDefined()
   @IsNumberString()
-  verifyCode: string;
+  verifyCode: string
 
   @ApiProperty({
     required: true,
@@ -28,7 +28,7 @@ export class ChangePasswordByCodeDto {
   })
   @IsDefined()
   @IsString()
-  password: string;
+  password: string
 }
 
-export default ChangePasswordByCodeDto;
+export default ChangePasswordByCodeDto

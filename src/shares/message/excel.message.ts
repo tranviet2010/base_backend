@@ -1,4 +1,3 @@
-import { TypeInputExcel } from 'src/modules/excel/excel.service';
 
 export const ERROR = {
   // type_service
@@ -10,7 +9,6 @@ export const ERROR = {
 
   // type
   TYPE_NOT_FOUND: 'gia hạn | thanh toán một lần không có trong file excel',
-  TYPE_NOT_MATCH: `gia hạn | thanh toán một lần phải là ${TypeInputExcel} `,
 
   // service_group
   SERVICE_GROUP_NOT_FOUND: 'tên nhóm dịch vụ không có trong file excel',

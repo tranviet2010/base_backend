@@ -3,22 +3,18 @@ import { Cache } from 'cache-manager';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User, UserDocument } from './schemas/user.schema';
-import { UserRole, UserStatus } from 'src/shares/enums/user.enum';
+import { UserStatus } from 'src/shares/enums/user.enum';
 import { GetUsersDto } from './dto/get-users.dto';
 import { GetUserDto } from './dto/get-user.dto';
 import { httpErrors } from 'src/shares/exceptions';
-import { UserFacebookInfoDto } from '../auth/dto/user-facebook-info.dto';
-import { UserGoogleInfoDto } from '../auth/dto/user-google-info.dto';
 import { generateHash } from 'src/shares/helpers/bcrypt';
 import { CreateUserDto } from './dto/create-user.dto';
-import { MailService } from '../mail/mail.service';
 import { ResPagingDto } from 'src/shares/dtos/pagination.dto';
 
 @Injectable()
 export class UserService {
   constructor(
     @InjectModel(User.name) private userModel: Model<UserDocument>,
-    private mailService: MailService,
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
   ) { }
 

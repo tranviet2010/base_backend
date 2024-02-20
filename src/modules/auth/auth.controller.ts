@@ -22,40 +22,8 @@ export class AuthController {
   constructor(
     private readonly authService: AuthService,
     private readonly userService: UserService,
-    private readonly clientService: ClientService,
+    // private readonly clientService: ClientService,
   ) {}
-
-  @Get('client/current')
-  @ClientAuth()
-  @ApiOperation({ summary: '[ Client ] Get get access token info' })
-  async currentClient(@UserID() clientId: string): Promise<User> {
-    return this.clientService.findById(clientId);
-  }
-
-  @Post('client/login')
-  @ApiOperation({ summary: '[ Client ] Login with gmail' })
-  async clientLogin(@Body() loginDto: LoginDto): Promise<ResponseLogin> {
-    return this.authService.clientLogin(loginDto);
-  }
-
-  @Post('client/refresh-access-token')
-  @ApiOperation({ summary: '[ Client ] Get new Access Token' })
-  @UseGuards(ClientRtGuards)
-  async clientRefreshAccessToken(@GetCurrentUser() client: PayloadRefreshTokenDto): Promise<ResponseRefreshTokenDto> {
-    return this.authService.ClientGetAccessToken(client);
-  }
-
-  @Post('client/facebook/login')
-  @ApiOperation({ summary: 'Login with facebook' })
-  async loginFacebook(@Body() loginFacebookDto: LoginFacebookDto): Promise<ResponseLogin> {
-    return this.authService.loginFacebook(loginFacebookDto);
-  }
-
-  @Post('client/google/login')
-  @ApiOperation({ summary: 'Login with google' })
-  async logInGoogle(@Body() loginInstagramDto: LoginGoogleDto): Promise<ResponseLogin> {
-    return this.authService.logInGoogle(loginInstagramDto);
-  }
 
   @Get('user/current')
   @UserAuth()
