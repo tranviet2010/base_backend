@@ -14,7 +14,7 @@ import { UserRtStrategy } from './strategies/user-rt.strategy';
 
 @Module({
   imports: [
-    // ClientModule,
+    ClientModule,
     UsersModule,
     JwtModule.register({}),
     CacheModule.register({

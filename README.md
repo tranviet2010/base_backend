@@ -1,7 +1,7 @@
-#  "Hallo-backend"
+#  "Base-backend"
 
 ## Description
-hallo backend
+Base backend
 
 ## Running the app in the first time
 ### Remember install docker, docker-compose before run command below:
